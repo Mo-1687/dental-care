@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import UserSync from "@/components/UserAsync/UserAsync";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-   title: "Dental Care - AI Powered Dental Assistant",
+  title: "Dental Care - AI Powered Dental Assistant",
   description:
     "Get instant dental advice through voice calls with our AI assistant. Avaiable 24/7.",
-}
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,13 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+        >
+          <UserSync />
+          {children}
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
