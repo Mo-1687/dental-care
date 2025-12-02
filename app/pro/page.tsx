@@ -1,11 +1,11 @@
+import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
-import WelcomeBadge from "@/components/WelcomeBadge/WelcomeBadge";
 import { PricingTable } from "@clerk/nextjs";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { CrownIcon } from "lucide-react";
 import { redirect } from "next/navigation";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 const ProPage = async () => {
   const user = await currentUser();
@@ -20,7 +20,7 @@ const ProPage = async () => {
       <Navbar />
       <div className="max-w-7xl mx-auto px-6 py-8 pt-24">
         {/* Welcome Section  */}
-        <WelcomeBadge
+        <Header
           icon={<CrownIcon className="w-16 h-16 text-primary" />}
           text={`${isInProSub ? "Upgrade to pro" : "Pro Subscription"}`}
           heading={`${
