@@ -1,7 +1,7 @@
+import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
 import ProPlanRequired from "@/components/voice/ProPlanRequired";
 import VapiWidget from "@/components/voice/VapiWidget";
-import WelcomeBadge from "@/components/WelcomeBadge/WelcomeBadge";
 import { auth } from "@clerk/nextjs/server";
 import { MicIcon } from "lucide-react";
 export const dynamic = 'force-dynamic';
@@ -16,7 +16,7 @@ const page = async () => {
     <div className="min-h-screen  bg-background">
       <Navbar />
       <div className="max-w-7xl mx-auto px-6 py-8 pt-24">
-        <WelcomeBadge
+        <Header
           BadgeIcon={
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
           }

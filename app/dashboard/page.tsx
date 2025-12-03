@@ -1,8 +1,8 @@
 import MainAction from "@/components/Dashboard/MainAction";
 import NextAppointment from "@/components/Dashboard/NextAppointment";
 import OverView from "@/components/Dashboard/OverView";
+import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
-import WelcomeBadge from "@/components/WelcomeBadge/WelcomeBadge";
 import Image from "next/image";
 
 export const dynamic = "force-dynamic";
@@ -13,7 +13,7 @@ const page = () => {
     <div>
       <Navbar />
       <div className="max-w-7xl mx-auto px-6 py-8 pt-24">
-        <WelcomeBadge
+        <Header
           text="Online"
           BadgeIcon={
             <div className="size-2 bg-primary rounded-full animate-pulse"></div>
