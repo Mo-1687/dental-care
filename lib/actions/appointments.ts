@@ -28,7 +28,6 @@ export async function getAppointments() {
 
     return appointments.map(transformAppointment);
   } catch (error) {
-    console.log("Failed to get Appointments", error);
     throw new Error("Failed to get Appointments");
   }
 }
@@ -56,7 +55,6 @@ export async function getUserAppointments() {
     });
     return appointments.map(transformAppointment);
   } catch (error) {
-    console.log(error);
     toast.error("Error fetching user appointments:");
     throw new Error("Failed to fetch user appointments");
   }
@@ -85,7 +83,6 @@ export async function getUserAppointmentsStats() {
       completedAppointments: completedCount,
     };
   } catch (error) {
-    console.log(error);
     throw new Error("Something went wrong");
   }
 }
@@ -175,7 +172,6 @@ export async function bookAppointment(input: AppointmentsType) {
 
     return transformAppointment(appointments);
   } catch (error) {
-    console.log(error);
     toast.error("Failed to book an appointment");
     throw new Error("Failed to book an appointment");
   }
@@ -193,7 +189,6 @@ export async function updateAppointmentStatus(input: {
 
     return appointment;
   } catch (error) {
-    console.log(error);
     throw new Error("Failed to update appointment");
   }
 }

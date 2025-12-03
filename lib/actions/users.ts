@@ -24,7 +24,6 @@ export async function syncUser() {
     });
     return dbUser;
   } catch (error) {
-    console.log(error);
     throw new Error("Failed to get user data server action");
   }
 }

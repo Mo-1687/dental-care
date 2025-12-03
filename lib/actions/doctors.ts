@@ -19,7 +19,6 @@ export async function getDoctors() {
       appointmentCount: doctor._count.appointment,
     }));
   } catch (error) {
-    console.log(error);
 
     throw new Error("Failed to get doctors");
   }
@@ -52,7 +51,6 @@ export async function createNewDoctor(doctorData: DoctorDataInterface) {
     revalidatePath("/admin");
     return doctor;
   } catch (error: { code?: string } | any) {
-    console.log(error);
     if (error?.code === "P2002") {
       toast.error("Doctor with this email already exists");
       throw new Error("Doctor with this email already exists", error);
@@ -122,7 +120,6 @@ export async function EditDoctorData(editedData: EditDoctorInput) {
     });
     return doctor;
   } catch (error) {
-    console.log(error); 
     toast.error("Failed to update Doctor data");
     throw new Error("Failed to update Doctor data");
   }
@@ -144,7 +141,6 @@ export async function getAvailableDoctors() {
       appointmentCount: doctor._count.appointment,
     }));
   } catch (error) {
-    console.log(error); 
     throw new Error("Failed to fetch available doctors:");
   }
 }
