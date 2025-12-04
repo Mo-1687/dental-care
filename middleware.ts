@@ -23,7 +23,7 @@ export const config = {
     
     //Protect Routes 
     "/admin",
-    "appointments",
+    "/appointments",
     "/dashboard",
     "/voice",
     "/pro",
